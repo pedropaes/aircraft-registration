@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+<br>
+<br>
+</div>
+<div class="container">
+  {% for x in range(0, size, 3):%}
+  <div class="row" style="margin-bottom:5px"> 
+    <div class="card-deck">
+      {% if x < size %}
+      <div class="card" style="max-width: 18rem;">
+        <a href="/recipes/{{data[x].id}}"><img class="card-img-top" src="/img/{{data[x].thumbnail}}" height="220" width="220" alt="/img/{{data[x].title}}"></a>
+        <div class="card-body">
+          <a href="/recipes/{{data[x].id}}"><h5 class="card-title">{{data[x].title}}</h5></a>
+          <p class="card-text">{{data[x].summary}}</p>
+        </div>
+        <div class="card-footer">
+          <small><strong>Category: </strong></small><small class="text-muted">{{data[x].category}}</small>
+        </div>
+      </div>
+      {% endif %}
+      {% if x+1 < size %}
+      <div class="card" style="max-width: 18rem;">
+        <a href="/recipes/{{data[x+1].id}}"><img class="card-img-top" src="/img/{{data[x+1].thumbnail}}" height="220" width="220" alt="/img/{{data[x+1].title}}"></a>
+        <div class="card-body">
+          <a href="/recipes/{{data[x+1].id}}"><h5 class="card-title">{{data[x+1].title}}</h5></a>
+          <p class="card-text">{{data[x+1].summary}}</p>
+        </div>
+        <div class="card-footer">
+          <small><strong>Category: </strong></small><small class="text-muted">{{data[x+1].category}}</small>
+        </div>
+      </div>
+      {% endif %}
+      {% if x+2 < size %}
+      <div class="card" style="max-width: 18rem;">
+        <a href="/recipes/{{data[x+2].id}}"><img class="card-img-top" src="/img/{{data[x+2].thumbnail}}" height="220" width="220" alt="recipe.title"></a>
+        <div class="card-body">
+          <a href="/recipes/{{data[x+2].id}}"><h5 class="card-title">{{data[x+2].title}}</h5></a>
+          <p class="card-text">{{data[x+2].summary}}</p>
+        </div>
+        <div class="card-footer">
+          <small><strong>Category: </strong></small><small class="text-muted">{{data[x+2].category}}</small>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+</div>
+{% endblock %}

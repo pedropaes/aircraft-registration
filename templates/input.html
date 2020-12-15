@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>Effectivity Sorting</h1>
+  <div class="row ">
+    <div class="col">
+      <form action="/" method="post">
+        <div class="d-flex justify-content-center">
+          <div class="form-group">
+
+            <button  type="submit" class="float-right btn btn-primary"> Submit </button>
+            
+            <textarea class="form-control" name="texto" id="textarea" rows="40" cols="120" style="background-color:white;color:black;border:1;padding:2%;font-size:10px;font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;">{{i}}</textarea>
+            
+          </div>
+          
+        </div>
+        <div style="display:none">
+          <label for="exampleFormControlFile1">File Input</label>
+          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        
+        
+        </form>
+    </div>
+   
+    <div class="col">
+      <button  type="button" onclick="copyToClipboard('#effectivity')" class=" float-right btn btn-warning"> Copy to Clipboard </button>
+      <textarea class="form-control" name="code" id="effectivity" rows="40" cols="120" style="background-color:black;color:white;border:none;padding:2%;font-size:10px;font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;">{{t}}</textarea>
+    </div>
+  </div>
+</div>
+
+
+                                        
+
+
+
+{% endblock %}
